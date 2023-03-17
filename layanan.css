@@ -1,0 +1,343 @@
+/* Variable Start */
+:root {
+  --primary: #000000;
+  --secondary: #ff6600;
+  --white: #f5f5f5;
+}
+/* Variable End */
+
+/* General Guide Start */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  list-style: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+section {
+  padding: 5rem 0 3rem;
+  max-width: 100vw;
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+h1 {
+  margin: auto;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  width: fit-content;
+  border-bottom: 2px solid var(--primary);
+}
+
+span {
+  color: var(--secondary);
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+/* General Guide End */
+
+/* Navbar Start */
+nav {
+  width: 100%;
+  height: 5rem;
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+  align-items: center;
+  display: flex;
+  background-color: var(--primary);
+}
+
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+nav img {
+  max-width: 2.5rem;
+  border-radius: 10px;
+}
+
+.nav-item {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-item a {
+  color: var(--white);
+}
+/* Navbar End */
+
+/* Slideshow Start */
+#slideshow .container {
+  width: 100%;
+}
+
+.slide-img img {
+  width: 100%;
+  float: left;
+}
+
+.slide-img {
+  position: absolute;
+  top: 5rem;
+  width: 100%;
+  height: 87%;
+  overflow: hidden;
+}
+
+.images {
+  display: flex;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  animation: slide 16s infinite;
+}
+
+.images::-webkit-scrollbar {
+  display: none;
+}
+
+.images img {
+  flex: 1 0 100%;
+  scroll-snap-align: start;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  12.5% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-100%);
+  }
+  37.5% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(-200%);
+  }
+  62.5% {
+    transform: translateX(-200%);
+  }
+  75% {
+    transform: translateX(-100%);
+  }
+  87.5% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+/* Slideshow End */
+
+/* Layanan Start */
+.layanan-grid {
+  display: grid;
+  padding: 2rem;
+  grid-template-columns: 300px 1fr;
+  gap: 1rem;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+  font: 500 100%/1.5 system-ui;
+}
+#layanan img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px 10px 10px 10px;
+  padding-left: 100px;
+}
+/* Layanan End */
+
+/* Fasilitas Start */
+#fasilitas {
+  height: 100%;
+}
+
+#fasilitas img {
+  height: 162px;
+  width: 243px;
+  border-radius: 10px;
+  padding-left: 0;
+}
+
+.fasilitas-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-rows: repeat(2, 2fr);
+  grid-template-areas:
+    "desk-fas fas-1 fas-2 fas-3"
+    "desk-fas fas-4 fas-5 fas-6";
+  gap: 1rem;
+}
+
+.deskripsi-fasilitas {
+  grid-area: desk-fas;
+  padding: 1rem;
+  margin-right: 1rem;
+  border-right: 1px solid var(--primary);
+  align-self: center;
+}
+
+.deskripsi-fasilitas h4 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.deskripsi-fasilitas p {
+  text-align: justify;
+}
+
+.fasilitas-1 {
+  grid-area: fas-1;
+}
+
+.fasilitas-2 {
+  grid-area: fas-2;
+}
+
+.fasilitas-3 {
+  grid-area: fas-3;
+}
+
+.fasilitas-4 {
+  grid-area: fas-4;
+}
+
+.fasilitas-5 {
+  grid-area: fas-5;
+}
+
+.fasilitas-6 {
+  grid-area: fas-6;
+}
+
+.fasilitas-1,
+.fasilitas-2,
+.fasilitas-3,
+.fasilitas-4,
+.fasilitas-5,
+.fasilitas-6 {
+  text-align: center;
+}
+/* Fasilitas End */
+
+/* Berita Start */
+#berita {
+  height: 100%;
+}
+
+#berita .container {
+  position: relative;
+}
+
+#berita img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.berita-grid {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1.5fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "ber-1 ber-2 desk-berita"
+    "ber-3 ber-4 desk-berita";
+  gap: 2rem;
+}
+
+.deskripsi-berita {
+  grid-area: desk-berita;
+  align-self: center;
+  border-left: 1px solid var(--primary);
+  padding: 1rem;
+}
+
+.deskripsi-berita h4 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.deskripsi-berita p {
+  text-align: justify;
+  margin-bottom: 2rem;
+}
+
+#berita a {
+  display: flex;
+  width: 60%;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  margin: 0 auto;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.berita-1 {
+  grid-area: ber-1;
+}
+
+.berita-2 {
+  grid-area: ber-2;
+}
+
+.berita-3 {
+  grid-area: ber-3;
+}
+
+.berita-4 {
+  grid-area: ber-4;
+}
+
+.berita-1,
+.berita-2,
+.berita-3,
+.berita-4 {
+  position: relative;
+}
+
+.berita-content {
+  position: absolute;
+  bottom: 0;
+  height: 7.5rem;
+  width: 100%;
+  padding: 1rem;
+  color: var(--white);
+  background-color: rgba(4, 9, 30, 0.6);
+  border-radius: 0 0 10px 10px;
+}
+
+.berita-content h4 {
+  margin-bottom: 1rem;
+}
+
+.berita-content p {
+  font-size: 0.8rem;
+}
+/* Berita End */
